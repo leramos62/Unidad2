@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- se asocia el modulo con la vista -->
+<html lang="en" ng-app="LoginFormModule">
 <head>
     <meta charset="UTF-8">
     <title>Ejercicio 1</title>
@@ -11,12 +12,27 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-        
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+                Primer Form bootstrap + angulars.
+            </a>
+        </div>
     </div>
-
-
-
 </nav>
+
+<!--contenedor principal-->
+<div class="container main-content">
+    <form name="theform">
+
+        <label for="name"> Nombre</label>
+        <input type="text" class="form-control" id="name">
+
+        <div class="form-group">
+
+        </div>
+
+    </form>
+</div>
 
 
 <script src="../../../bower_components/angular/angular.min.js"></script>
