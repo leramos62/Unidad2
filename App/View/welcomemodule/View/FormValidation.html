@@ -22,30 +22,36 @@
 
 <!--contenedor principal-->
 <div class="container main-content" ng-controller="LoginFormControler">
-    <form name="theform" ng-submit="OnSubmit()">
+    <form name="theform" novalidate="novalidate" ng-submit="OnSubmit(theform.$valid);">
 
         <div class="form-group">
 
         <label for="name"> Nombre</label>
-        <input type="text" class="form-control" id="name" ng-model="FormModel.name">
+        <input type="text" class="form-control" required="required" id="name"  ng-model= "FormModel.name">
 
         </div>
 
         <div class="form-group">
 
             <label for="name"> Password</label>
-            <input type="password" class="form-control" id="password" ng-model="FormModel.password">
+            <input type="password" class= required="required" id="password" ng-model="FormModel.password">
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" ng-class="
+        {
+        'has-error':!theform.email.$valid && (!theform.$pristine|| theform.$submitted),
+        'has-success':theform.email.$valid && (!theform.$pristine || theform.$submitted)
+
+         }">
 
             <label for="name"> E-mail</label>
-            <input type="email" class="form-control" id="email" ng-model="FormModel.email">
+            <input type="email" class="form-control" required="required" id="email" ng-model="FormModel.email">
 
         </div>
 
         <div class="form-group">
+
             <button class="btn btn-primary" type="submit">
                 Registrar
             </button>
