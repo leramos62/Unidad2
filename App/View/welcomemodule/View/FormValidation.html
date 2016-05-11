@@ -21,17 +21,42 @@
 </nav>
 
 <!--contenedor principal-->
-<div class="container main-content">
-    <form name="theform">
-
-        <label for="name"> Nombre</label>
-        <input type="text" class="form-control" id="name">
+<div class="container main-content" ng-controller="LoginFormControler">
+    <form name="theform" ng-submit="OnSubmit()">
 
         <div class="form-group">
+
+        <label for="name"> Nombre</label>
+        <input type="text" class="form-control" id="name" ng-model="FormModel.name">
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="name"> Password</label>
+            <input type="password" class="form-control" id="password" ng-model="FormModel.password">
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="name"> E-mail</label>
+            <input type="email" class="form-control" id="email" ng-model="FormModel.email">
+
+        </div>
+
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">
+                Registrar
+            </button>
 
         </div>
 
     </form>
+
+    <pre> {{FormModel.name | json }} </pre>
+    <pre> {{FormModel.password | json }} </pre>
+    <pre> {{FormModel.email| json }} </pre>
 </div>
 
 

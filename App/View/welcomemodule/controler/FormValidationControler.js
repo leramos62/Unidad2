@@ -3,12 +3,17 @@
  */
 <!-- creacion de modulos-->
 <!-- primero string y despues dependencias-->
-var app= angula.module('LoginFormModule', []);
+var app= angular.module('LoginFormModule', []);
 
 <!-- creacion de controles-->
 
-app.controller('LoginFormControler',function($scope,$hhtp)
+app.controller('LoginFormControler',function($scope,$http)
         {
-            
-        }
-);
+            $scope.FormModel= {}; //modelo, entidad generada para sustentar la vista
+            //crear funcion para llamar el submit
+            $scope.OnSubmit=function()
+            {
+                console.log("llegue, primer angular JS");
+                console.log($scope.FormModel)
+            }
+        });
