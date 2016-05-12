@@ -40,7 +40,7 @@
 
         <div class="form-group" ng-class="
         {
-        'has-error':!theform.email.$valid && (!theform.$pristine|| theform.$submitted),
+        'has-erro':!theform.email.$valid && (!theform.$pristine|| theform.$submitted),
         'has-success':theform.email.$valid && (!theform.$pristine || theform.$submitted)
 
          }">
@@ -49,6 +49,10 @@
             <input type="email" class="form-control" required="required" id="email" ng-model="FormModel.email">
 
         </div>
+
+        <p class="help-block" ng-show="theform.email.$error.required && (theform.$pristine || theform.$submitted)">
+            El campo Email es obligatorio
+        </p>
 
         <div class="form-group">
 
